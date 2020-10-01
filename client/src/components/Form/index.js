@@ -8,7 +8,7 @@ function SearchForm({ q, handleInputChange, handleFormSubmit }) {
         <FormGroup>
           <Input
             type="text"
-            name={q}
+            name="q"
             id="UserSearch"
             onChange={handleInputChange}
             placeholder="Let's find your next page-turner"
