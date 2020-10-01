@@ -3,12 +3,12 @@ import { ListItem } from "../List";
 import { Row, Col } from "../Grid";
 import "./style.css";
 
-function Book(/* YOUR CODE */) {
+function Book({children}) {
   return (
     <div>
       <Row>
         <Col>
-          <ListItem/>
+          <ListItem>{children}</ListItem>
         </Col>
       </Row>
     </div>

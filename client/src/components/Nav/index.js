@@ -9,10 +9,10 @@ function Navigate() {
         <NavbarBrand href="/">Bookworm</NavbarBrand>
         <Nav className="mr-auto" navbar>
             <NavItem>
-              <NavLink href="/components/">Home</NavLink>
+              <NavLink href="/">Home</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="https://github.com/reactstrap/reactstrap">Wishlist</NavLink>
+              <NavLink href="/saved">Wishlist</NavLink>
             </NavItem>
           </Nav>
       </Navbar>

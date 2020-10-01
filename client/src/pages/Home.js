@@ -12,7 +12,7 @@ class Home extends Component {
   state = {
     books: [],
     q: "",
-    message: "Search For A Book To Begin!"
+    message: "Let the search begin!"
   };
 
   handleInputChange = event => {
@@ -65,7 +65,7 @@ class Home extends Component {
               <h1 className="text-center">
                 <strong>Cozy up with a good book and avoid that early bird</strong>
               </h1>
-              <h3 className="text-center">Search and Save Books of Interest.</h3>
+              <h4 className="text-center">Search and Save Books of Interest.</h4>
             </Jumbotron>
           </Col>
           <Col size="md-12">
