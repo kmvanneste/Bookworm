@@ -1,9 +1,24 @@
 import React from "react";
+import { Button, Form, FormGroup, Input } from "reactstrap";
+import "./style.css"
 
-function Form({ q, handleInputChange, handleFormSubmit }) {
+function SearchForm({ q, handleInputChange, handleFormSubmit }) {
   return (
-    // YOUR CODE HERE
+      <Form>
+        <FormGroup>
+          <Input
+            type="text"
+            name={q}
+            id="UserSearch"
+            onChange={handleInputChange}
+            placeholder="Let's find your next page-turner"
+          />
+          <Button className={"btn"} color="primary" type="submit" onClick={handleFormSubmit}>
+            Search
+          </Button>
+        </FormGroup>
+      </Form>
   );
 }
 
-export default Form;
+export default SearchForm;

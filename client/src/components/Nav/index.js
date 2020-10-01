@@ -1,15 +1,23 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
 import "./style.css";
+import { Navbar, NavbarBrand, Nav, NavItem, NavLink} from 'reactstrap';
 
-function Nav() {
+function Navigate() {
     return (
-      <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-        <Link className="navbar-brand" href="/">
-          React Reading List
-        </Link>
-      </nav>
+      <div>
+      <Navbar color="light" light expand="md">
+        <NavbarBrand href="/">Bookworm</NavbarBrand>
+        <Nav className="mr-auto" navbar>
+            <NavItem>
+              <NavLink href="/components/">Home</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="https://github.com/reactstrap/reactstrap">Wishlist</NavLink>
+            </NavItem>
+          </Nav>
+      </Navbar>
+    </div>
     );
   }
 
-export default Nav;
+export default Navigate;

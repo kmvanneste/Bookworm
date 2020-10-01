@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Jumbotron from "../components/Jumbotron";
 import Card from "../components/Card";
-import Form from "../components/Form";
+import SearchForm from "../components/Form";
 import Book from "../components/Book";
 import Footer from "../components/Footer";
 import API from "../utils/API";
@@ -63,18 +63,18 @@ class Home extends Component {
           <Col size="md-12">
             <Jumbotron>
               <h1 className="text-center">
-                <strong>(React) Google Books Search</strong>
+                <strong>Cozy up with a good book and avoid that early bird</strong>
               </h1>
-              <h2 className="text-center">Search for and Save Books of Interest.</h2>
+              <h3 className="text-center">Search and Save Books of Interest.</h3>
             </Jumbotron>
           </Col>
           <Col size="md-12">
-            <Card title="Book Search" icon="far fa-book">
-              <Form
+            <Card title="Book Search">
+              <SearchForm
                 handleInputChange={this.handleInputChange}
                 handleFormSubmit={this.handleFormSubmit}
                 q={this.state.q}
-              />
+               />
             </Card>
           </Col>
         </Row>
