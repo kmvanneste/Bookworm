@@ -1,2 +1,2 @@
-# Google-Books
-This React-based app allows users to query and display books based on their input in the search bar.  By utilizing Node, Express, and MongoDB, users are able to save and review books or purchase them later.. 
+# Bookworm
+Bookworm is a React-based application allows users to query and display books from the Google Books API.  The backend technologies Node, Express, and MongoDB, allow users to search for books of interest, save their favorites to a wishlist, and purchase them later.
