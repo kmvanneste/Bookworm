@@ -62,9 +62,13 @@ class Home extends Component {
         <Row>
           <Col size="md-12">
             <Jumbotron>
-              <h1 className="text-center">
+            <h1 className="text-center">
+                <strong>Bookworm</strong>
+            </h1>
+              <br></br>
+             <h2 className="text-center">
                 <strong>Cozy up with a good book and avoid that early bird</strong>
-              </h1>
+            </h2>
               <h4 className="text-center">Search and Save Books of Interest.</h4>
             </Jumbotron>
           </Col>
