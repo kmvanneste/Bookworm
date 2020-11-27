@@ -66,7 +66,7 @@ class Home extends Component {
                 <strong>Bookworm</strong>
             </h1>
               <br></br>
-             <h2 className="text-center">
+            <h2 className="text-center">
                 <strong>Cozy up with a good book and avoid that early bird</strong>
             </h2>
               <h4 className="text-center">Search and Save Books of Interest.</h4>
@@ -78,7 +78,7 @@ class Home extends Component {
                 handleInputChange={this.handleInputChange}
                 handleFormSubmit={this.handleFormSubmit}
                 q={this.state.q}
-               />
+              />
             </Card>
           </Col>
         </Row>
