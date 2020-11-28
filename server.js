@@ -15,10 +15,11 @@ if (process.env.NODE_ENV === "production") {
 
 app.use(routes);
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/googlebooks', {
-  useCreateIndex: true,
-  useNewUrlParser: true,
-});
+mongoose.connect(
+    "mongodb://127.0.0.1:27017/googlebooks",
+    { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true}).then(db => {
+      console.log("Database connected");
+    }).catch(error => console.log("Could not connect to mongo db " + error));
 
 app.listen(PORT, function () {
   console.log(`Currently listening on Port:${PORT}`);
