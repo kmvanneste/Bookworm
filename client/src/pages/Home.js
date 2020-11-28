@@ -1,49 +1,54 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import Jumbotron from "../components/Jumbotron";
 import Card from "../components/Card";
-import SearchForm from "../components/Form";
+import Form from "../components/Form";
 import Book from "../components/Book";
 import Footer from "../components/Footer";
 import API from "../utils/API";
 import { Col, Row, Container } from "../components/Grid";
 import { List } from "../components/List";
 
-class Home extends Component {
-  state = {
+function Home() {
+  const [state, setState] = useState ({
     books: [],
     q: "",
     message: "Let the search begin!"
-  };
+  });
 
-  handleInputChange = event => {
+  const handleInputChange = event => {
     const { name, value } = event.target;
-    this.setState({
+    setState({...state,
       [name]: value
     });
   };
 
-  getBooks = () => {
-    API.getBooks(this.state.q)
-      .then(res =>
-        this.setState({
+  const getBooks = () => {
+    API.getBooks(state.q)
+      .then(res => {
+        setState({
           books: res.data
-        })
-      )
+        });
+        console.log(res.data);
+        console.log(state.books.length);
+      })
       .catch(() =>
-        this.setState({
+        setState({
+          ...state,
           books: [],
           message: "No New Books Found, Try a Different Query"
         })
       );
   };
 
-  handleFormSubmit = event => {
+  const handleFormSubmit = event => {
     event.preventDefault();
-    this.getBooks();
+    getBooks();
   };
 
-  handleBookSave = id => {
-    const book = this.state.books.find(book => book.id === id);
+  const handleBookSave = id => {
+    const book = state.books.find(book => book.id === id);
+    console.log(book);
+    console.log(id);
 
     API.saveBook({
       googleId: book.id,
@@ -53,10 +58,9 @@ class Home extends Component {
       authors: book.volumeInfo.authors,
       description: book.volumeInfo.description,
       image: book.volumeInfo.imageLinks.thumbnail
-    }).then(() => this.getBooks());
+    }).then(() => getBooks());
   };
 
-  render() {
     return (
       <Container>
         <Row>
@@ -74,10 +78,10 @@ class Home extends Component {
           </Col>
           <Col size="md-12">
             <Card title="Book Search">
-              <SearchForm
-                handleInputChange={this.handleInputChange}
-                handleFormSubmit={this.handleFormSubmit}
-                q={this.state.q}
+              <Form
+                handleInputChange={handleInputChange}
+                handleFormSubmit={handleFormSubmit}
+                q={state.q}
               />
             </Card>
           </Col>
@@ -85,7 +89,7 @@ class Home extends Component {
         <Row>
           <Col size="md-12">
             <Card title="Results">
-              {this.state.books.length ? (
+              {state.books.length ? (
                 <List>
                   {this.state.books.map(book => (
                     <Book
@@ -98,7 +102,7 @@ class Home extends Component {
                       image={book.volumeInfo.imageLinks.thumbnail}
                       Button={() => (
                         <button
-                          onClick={() => this.handleBookSave(book.id)}
+                          onClick={() => handleBookSave(book.id)}
                           className="btn btn-primary ml-2"
                         >
                           Save
@@ -108,7 +112,7 @@ class Home extends Component {
                   ))}
                 </List>
               ) : (
-                <h2 className="text-center">{this.state.message}</h2>
+                <h2 className="text-center">{state.message}</h2>
               )}
             </Card>
           </Col>
@@ -117,6 +121,5 @@ class Home extends Component {
       </Container>
     );
   }
-}
 
 export default Home;
