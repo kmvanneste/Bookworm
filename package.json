@@ -24,8 +24,9 @@
     "bootstrap": "^4.5.3",
     "braintree-web": "^3.66.0",
     "express": "^4.16.3",
+    "fsevents": "^1.2.9",
     "if-env": "^1.0.4",
-    "mongoose": "^5.10.7",
+    "mongoose": "^5.10.17",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "reactstrap": "^8.7.1"

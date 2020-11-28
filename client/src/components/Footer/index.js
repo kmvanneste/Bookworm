@@ -5,7 +5,7 @@ function Footer() {
     <footer>
       <hr />
       <p className="pull-right">
-        <i className="fab fa-github" /> Just Another React App
+        <i className="fab fa-github" /> kmvn React App
       </p>
     </footer>
   );
