@@ -13,7 +13,7 @@ function Saved () {
   });
 
   useEffect(() => {
-    this.getSavedBooks();
+    getSavedBooks();
   }, [])
 
   const getSavedBooks = () => {
@@ -46,9 +46,9 @@ function Saved () {
           <Row>
             <Col size="md-12">
               <Card title="Saved">
-                {this.state.books.length ? (
+                {state.books.length ? (
                   <List>
-                    {this.state.books.map(book => (
+                    {state.books.map(book => (
                       <Book
                         key={book._id}
                         title={book.title}
@@ -69,7 +69,7 @@ function Saved () {
                     ))}
                   </List>
                 ) : (
-                  <h2 className="text-center">{this.state.message}</h2>
+                  <h2 className="text-center">{state.message}</h2>
                 )}
               </Card>
             </Col>
