@@ -5,7 +5,7 @@ import Form from "../components/Form";
 import Book from "../components/Book";
 import Footer from "../components/Footer";
 import API from "../utils/API";
-import { Col, Row, Container } from "../components/Grid";
+import { Row, Container } from "../components/Grid";
 import { List } from "../components/List";
 
 function Home() {
@@ -64,7 +64,7 @@ function Home() {
     return (
       <Container>
         <Row>
-          <Col size="md-12">
+          <div className="col-md-12">
             <Jumbotron>
             <h1 className="text-center">
                 <strong>Bookworm</strong>
@@ -75,8 +75,8 @@ function Home() {
             </h2>
               <h4 className="text-center">Search and Save Books of Interest.</h4>
             </Jumbotron>
-          </Col>
-          <Col size="md-12">
+          </div>
+          <div className="col-md-12">
             <Card title="Book Search">
               <Form
                 handleInputChange={handleInputChange}
@@ -84,14 +84,14 @@ function Home() {
                 q={state.q}
               />
             </Card>
-          </Col>
+          </div>
         </Row>
         <Row>
-          <Col size="md-12">
+          <div className="col-md-12">
             <Card title="Results">
               {state.books.length ? (
                 <List>
-                  {this.state.books.map(book => (
+                  {state.books.map(book => (
                     <Book
                       key={book.id}
                       title={book.volumeInfo.title}
@@ -115,7 +115,7 @@ function Home() {
                 <h2 className="text-center">{state.message}</h2>
               )}
             </Card>
-          </Col>
+          </div>
         </Row>
         <Footer />
       </Container>

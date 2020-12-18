@@ -4,7 +4,7 @@ import Card from "../components/Card";
 import Book from "../components/Book";
 import Footer from "../components/Footer";
 import API from "../utils/API";
-import { Col, Row, Container } from "../components/Grid";
+import { Row, Container } from "../components/Grid";
 import { List } from "../components/List";
 
 function Saved () {
@@ -34,17 +34,17 @@ function Saved () {
       return (
         <Container>
           <Row>
-            <Col size="md-12">
+            <div className="col-md-12">
               <Jumbotron>
                 <h1 className="text-center">
                   <strong>Wishlist</strong>
                 </h1>
                 <h4 className="text-center">Your Saved Books of Interest</h4>
               </Jumbotron>
-            </Col>
+            </div>
           </Row>
           <Row>
-            <Col size="md-12">
+            <div className="col-md-12">
               <Card title="Saved">
                 {state.books.length ? (
                   <List>
@@ -72,7 +72,7 @@ function Saved () {
                   <h2 className="text-center">{state.message}</h2>
                 )}
               </Card>
-            </Col>
+            </div>
           </Row>
           <Footer />
         </Container>
